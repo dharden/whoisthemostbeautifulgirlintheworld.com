@@ -47,6 +47,15 @@
     <meta name="theme-color" content="#ff0099">
   </head>
   <body>
+    <script>
+    // Check that service workers are registered
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+    </script>
     <img src="CoolSun.png" alt="a cool sun" style="position: absolute; top: 0; right: 0;" width="200">
     <h1>Lola</h1>
   </body>
